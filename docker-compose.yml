@@ -26,6 +26,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - mysqldata:/var/lib/mysql
+      - ./certs:/etc/certs
+      - ./config/mariadb-ssl.cnf:/etc/mysql/mariadb.conf.d/mariadb-ssl.cnf
     ports:
       - 3306:3306
 volumes:
